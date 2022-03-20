@@ -17,6 +17,7 @@ function App() {
                 let jsonData = eval('(' + data + ')'); // eslint-disable-line
                 setState({products: jsonData, isLoading: false})
             })
+            .catch(err => setState({err, isLoading: false}))
     })
 
     if(state.isLoading) {
